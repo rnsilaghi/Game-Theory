@@ -1,10 +1,7 @@
 import sqlite3
 import os
 
-# Absolute path to the directory this file lives in (Game Theory folder)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
-# Database lives directly in Game Theory folder
 DB_PATH = os.path.join(BASE_DIR, "my_db.db")
 
 
@@ -16,14 +13,23 @@ def create_db():
     conn = get_connection()
     cur = conn.cursor()
 
+    # Store each manager-quarter-ticker observation coming from ONE filing (accession_no)
     cur.execute("""
     CREATE TABLE IF NOT EXISTS holdings (
-        manager TEXT,
-        quarter TEXT,
-        ticker TEXT,
-        shares INTEGER,
-        market_value REAL
+        accession_no TEXT NOT NULL,
+        manager      TEXT NOT NULL,
+        quarter      TEXT NOT NULL,
+        ticker       TEXT NOT NULL,
+        shares       INTEGER,          -- may be NULL
+        value_k      REAL NOT NULL,    -- USD thousands; stable from your API
+        filed_at     TEXT             -- optional, when filing was filed
     )
+    """)
+
+    # Hard dedupe rule: same filing + manager + ticker should never be inserted twice
+    cur.execute("""
+    CREATE UNIQUE INDEX IF NOT EXISTS ux_holdings_unique
+    ON holdings(accession_no, manager, ticker)
     """)
 
     conn.commit()
@@ -38,9 +44,9 @@ def insert_holdings(rows):
     cur = conn.cursor()
 
     cur.executemany("""
-        INSERT INTO holdings
-        (manager, quarter, ticker, shares, market_value)
-        VALUES (?, ?, ?, ?, ?)
+        INSERT OR IGNORE INTO holdings
+        (accession_no, manager, quarter, ticker, shares, value_k, filed_at)
+        VALUES (?, ?, ?, ?, ?, ?, ?)
     """, rows)
 
     conn.commit()
