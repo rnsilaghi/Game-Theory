@@ -4,15 +4,6 @@ from datetime import datetime, timedelta
 from api import SEC_API_KEY, SEC_BASE_URL
 
 
-def _safe_int(x):
-    try:
-        if x is None:
-            return None
-        return int(float(x))
-    except Exception:
-        return None
-
-
 def _safe_float(x):
     try:
         if x is None:
@@ -43,9 +34,7 @@ def get_13f_filings_for_ticker_backfill(
     """
     BACKFILL MODE:
     Pull filings OLDER than end_checkpoint_filed_at, but within last `years` years.
-
-    Query: filedAt:[start_date TO end_date] (inclusive),
-    then strict filter: filedAt < checkpoint (so we don't re-pull boundary).
+    Query is date-only for compatibility, then strict filter filedAt < checkpoint.
     """
     if not SEC_API_KEY or SEC_API_KEY.startswith("YOUR_"):
         raise ValueError("SEC_API_KEY missing or invalid")
@@ -78,6 +67,7 @@ def get_13f_filings_for_ticker_backfill(
     r.raise_for_status()
     filings = r.json().get("filings", [])
 
+    # Strictly older than checkpoint so we don't re-pull boundary
     if checkpoint_dt:
         filtered = []
         for f in filings:
@@ -91,16 +81,28 @@ def get_13f_filings_for_ticker_backfill(
 
 def extract_holdings(filings: List[Dict], ticker: str) -> List[Tuple]:
     """
-    (accession_no, manager, quarter, ticker, shares, value_k, filed_at)
+    Returns rows ready for SQLite insertion:
+    (accession_no, manager, quarter, ticker, value_k, filed_date)
     """
     rows = []
+
     for f in filings:
         manager = f.get("companyName")
         quarter = f.get("periodOfReport")
         filed_at = f.get("filedAt")
 
-        accession_no = f.get("accessionNo") or f.get("accessionNumber") or f.get("id") or f.get("linkToHtml")
-        if not accession_no or not manager or not quarter:
+        if not manager or not quarter or not filed_at:
+            continue
+
+        filed_date = str(filed_at)[:10]  # ✅ clean
+
+        accession_no = (
+            f.get("accessionNo")
+            or f.get("accessionNumber")
+            or f.get("id")
+            or f.get("linkToHtml")
+        )
+        if not accession_no:
             continue
 
         holdings = f.get("holdings") or []
@@ -111,7 +113,6 @@ def extract_holdings(filings: List[Dict], ticker: str) -> List[Tuple]:
             if (h.get("ticker") or "").upper() != ticker.upper():
                 continue
 
-            shares = _safe_int(h.get("shares") or h.get("sshPrnamt"))
             value_k = _safe_float(h.get("value") or h.get("marketValue") or h.get("valueK"))
             if value_k is None:
                 continue
@@ -121,9 +122,8 @@ def extract_holdings(filings: List[Dict], ticker: str) -> List[Tuple]:
                 str(manager),
                 str(quarter),
                 ticker.upper(),
-                shares,
                 value_k,
-                filed_at
+                filed_date
             ))
 
     return rows

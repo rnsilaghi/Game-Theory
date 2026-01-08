@@ -1,150 +1,117 @@
-=== ORCL (per-manager position changes; qty_source=shares or value_k) ===
-
-MANAGER: Auto-Owners Insurance Co
----------------------------------
-quarter | filed_date | action | value_k | prev_qty | qty | delta | qty_source
-2025-09-30 | 2025-11-17 | SELL | 584512 | 4077980 | 584512 | -3493468 | value_k
+=== ORCL (per-manager position changes; qty_proxy=value_k) ===
 
 MANAGER: Blue Fin Capital, Inc.
 -------------------------------
-quarter | filed_date | action | value_k | prev_qty | qty | delta | qty_source
-2025-09-30 | 2025-11-21 | BUY | 774791 | 351902 | 774791 | 422889 | value_k
-
-MANAGER: CANTOR FITZGERALD, L. P.
----------------------------------
-quarter | filed_date | action | value_k | prev_qty | qty | delta | qty_source
-2025-09-30 | 2025-11-14 | HOLD | 83247040 | 83247040 | 83247040 | 0 | value_k
+quarter | filed_date | action | prev_qty | qty | delta
+2025-09-30 | 2025-11-21 | BUY | 351902 | 774791 | 422889
 
 MANAGER: DANSKE BANK A/S
 ------------------------
-quarter | filed_date | action | value_k | prev_qty | qty | delta | qty_source
-2025-06-30 | 2025-12-18 | BUY | 17547025 | 7575745 | 17547025 | 9971280 | value_k
-2025-09-30 | 2025-11-19 | BUY | 22640101 | 17547025 | 22640101 | 5093076 | value_k
+quarter | filed_date | action | prev_qty | qty | delta
+2025-06-30 | 2025-12-18 | BUY | 7575745 | 17547025 | 9971280
+2025-09-30 | 2025-11-19 | BUY | 17547025 | 22640101 | 5093076
 
 MANAGER: Danica Pension, Livsforsikringsaktieselskab
 ----------------------------------------------------
-quarter | filed_date | action | value_k | prev_qty | qty | delta | qty_source
-2025-06-30 | 2025-12-18 | BUY | 165108501 | 99983304 | 165108501 | 65125197 | value_k
-2025-09-30 | 2025-11-19 | SELL | 139716938 | 165108501 | 139716938 | -25391563 | value_k
+quarter | filed_date | action | prev_qty | qty | delta
+2025-06-30 | 2025-12-18 | BUY | 99983304 | 165108501 | 65125197
+2025-09-30 | 2025-11-19 | SELL | 165108501 | 139716938 | -25391563
 
 MANAGER: Evelyn Partners Investment Management LLP
 --------------------------------------------------
-quarter | filed_date | action | value_k | prev_qty | qty | delta | qty_source
-2025-03-31 | 2025-12-08 | SELL | 196433 | 234129 | 196433 | -37696 | value_k
-2025-06-30 | 2025-11-25 | SELL | 192394 | 196433 | 192394 | -4039 | value_k
-2025-09-30 | 2025-11-14 | BUY | 222180 | 192394 | 222180 | 29786 | value_k
+quarter | filed_date | action | prev_qty | qty | delta
+2025-03-31 | 2025-12-08 | SELL | 234129 | 196433 | -37696
+2025-06-30 | 2025-11-25 | SELL | 196433 | 192394 | -4039
 
 MANAGER: Evelyn Partners Investment Management Services Ltd
 -----------------------------------------------------------
-quarter | filed_date | action | value_k | prev_qty | qty | delta | qty_source
-2025-03-31 | 2025-12-08 | SELL | 50332 | 59990 | 50332 | -9658 | value_k
-2025-06-30 | 2025-11-25 | BUY | 78707 | 50332 | 78707 | 28375 | value_k
-2025-09-30 | 2025-11-14 | BUY | 329051 | 78707 | 329051 | 250344 | value_k
+quarter | filed_date | action | prev_qty | qty | delta
+2025-03-31 | 2025-12-08 | SELL | 59990 | 50332 | -9658
+2025-06-30 | 2025-11-25 | BUY | 50332 | 78707 | 28375
 
 MANAGER: Finivi Inc.
 --------------------
-quarter | filed_date | action | value_k | prev_qty | qty | delta | qty_source
-2024-03-31 | 2025-12-19 | SELL | 662813 | 705916 | 662813 | -43103 | value_k
-2024-06-30 | 2025-12-19 | BUY | 752895 | 662813 | 752895 | 90082 | value_k
-2024-09-30 | 2025-12-19 | BUY | 920966 | 752895 | 920966 | 168071 | value_k
-2024-12-31 | 2025-12-19 | SELL | 867135 | 920966 | 867135 | -53831 | value_k
-2025-03-31 | 2025-12-19 | SELL | 834685 | 867135 | 834685 | -32450 | value_k
-2025-06-30 | 2025-12-19 | BUY | 1284748 | 834685 | 1284748 | 450063 | value_k
-2025-09-30 | 2025-12-19 | BUY | 1481649 | 1284748 | 1481649 | 196901 | value_k
+quarter | filed_date | action | prev_qty | qty | delta
+2024-03-31 | 2025-12-19 | SELL | 705916 | 662813 | -43103
+2024-06-30 | 2025-12-19 | BUY | 662813 | 752895 | 90082
+2024-09-30 | 2025-12-19 | BUY | 752895 | 920966 | 168071
+2024-12-31 | 2025-12-19 | SELL | 920966 | 867135 | -53831
+2025-03-31 | 2025-12-19 | SELL | 867135 | 834685 | -32450
+2025-06-30 | 2025-12-19 | BUY | 834685 | 1284748 | 450063
+2025-09-30 | 2025-12-19 | BUY | 1284748 | 1481649 | 196901
 
 MANAGER: First Affirmative Financial Network
 --------------------------------------------
-quarter | filed_date | action | value_k | prev_qty | qty | delta | qty_source
-2025-09-30 | 2025-11-20 | BUY | 1447991 | 1237376 | 1447991 | 210615 | value_k
-
-MANAGER: Keystone Financial Group
----------------------------------
-quarter | filed_date | action | value_k | prev_qty | qty | delta | qty_source
-2025-09-30 | 2025-11-14 | SELL | 1413171 | 1845551 | 1413171 | -432380 | value_k
+quarter | filed_date | action | prev_qty | qty | delta
+2025-09-30 | 2025-11-20 | BUY | 1237376 | 1447991 | 210615
 
 MANAGER: Liontrust Investment Partners LLP
 ------------------------------------------
-quarter | filed_date | action | value_k | prev_qty | qty | delta | qty_source
-2025-09-30 | 2025-11-24 | BUY | 46784415 | 45107802 | 46784415 | 1676613 | value_k
+quarter | filed_date | action | prev_qty | qty | delta
+2025-09-30 | 2025-11-24 | BUY | 45107802 | 46784415 | 1676613
 
 MANAGER: Maxele Advisors, LLC
 -----------------------------
-quarter | filed_date | action | value_k | prev_qty | qty | delta | qty_source
-2025-03-31 | 2025-12-01 | SELL | 262462 | 312665 | 262462 | -50203 | value_k
-2025-06-30 | 2025-12-01 | BUY | 410827 | 262462 | 410827 | 148365 | value_k
+quarter | filed_date | action | prev_qty | qty | delta
+2025-03-31 | 2025-12-01 | SELL | 312665 | 262462 | -50203
+2025-06-30 | 2025-12-01 | BUY | 262462 | 410827 | 148365
 
 MANAGER: Payne Capital Management, LLC
 --------------------------------------
-quarter | filed_date | action | value_k | prev_qty | qty | delta | qty_source
-2025-03-31 | 2025-11-25 | SELL | 265220 | 303618 | 265220 | -38398 | value_k
-2025-06-30 | 2025-11-25 | BUY | 400530 | 265220 | 400530 | 135310 | value_k
-2025-09-30 | 2025-12-01 | BUY | 466813 | 400530 | 466813 | 66283 | value_k
-
-MANAGER: Polar Asset Management Partners Inc.
----------------------------------------------
-quarter | filed_date | action | value_k | prev_qty | qty | delta | qty_source
-2025-09-30 | 2025-11-14 | HOLD | 35155000 | 35155000 | 35155000 | 0 | value_k
+quarter | filed_date | action | prev_qty | qty | delta
+2025-03-31 | 2025-11-25 | SELL | 303618 | 265220 | -38398
+2025-06-30 | 2025-11-25 | BUY | 265220 | 400530 | 135310
+2025-09-30 | 2025-12-01 | BUY | 400530 | 466813 | 66283
 
 MANAGER: REGIONS FINANCIAL CORP
 -------------------------------
-quarter | filed_date | action | value_k | prev_qty | qty | delta | qty_source
-2025-09-30 | 2025-11-19 | SELL | 48834795 | 75238450 | 48834795 | -26403655 | value_k
+quarter | filed_date | action | prev_qty | qty | delta
+2025-09-30 | 2025-11-19 | SELL | 75238450 | 48834795 | -26403655
 
 MANAGER: ROYAL BANK OF CANADA
 -----------------------------
-quarter | filed_date | action | value_k | prev_qty | qty | delta | qty_source
-2025-06-30 | 2025-11-21 | BUY | 230893000 | 159748000 | 230893000 | 71145000 | value_k
+quarter | filed_date | action | prev_qty | qty | delta
+2025-06-30 | 2025-11-21 | BUY | 159748000 | 230893000 | 71145000
 
 MANAGER: SHERMAN PORFOLIOS, LLC
 -------------------------------
-quarter | filed_date | action | value_k | prev_qty | qty | delta | qty_source
-2025-09-30 | 2025-12-22 | BUY | 950872 | 946682 | 950872 | 4190 | value_k
+quarter | filed_date | action | prev_qty | qty | delta
+2025-09-30 | 2025-12-22 | BUY | 946682 | 950872 | 4190
 
 MANAGER: Saranac Partners Ltd
 -----------------------------
-quarter | filed_date | action | value_k | prev_qty | qty | delta | qty_source
-2025-06-30 | 2025-12-15 | BUY | 6192257 | 3793185 | 6192257 | 2399072 | value_k
-2025-09-30 | 2025-12-05 | SELL | 16874 | 6192257 | 16874 | -6175383 | value_k
+quarter | filed_date | action | prev_qty | qty | delta
+2025-06-30 | 2025-12-15 | BUY | 3793185 | 6192257 | 2399072
+2025-09-30 | 2025-12-05 | SELL | 6192257 | 16874 | -6175383
 
 MANAGER: Severin Investments, LLC
 ---------------------------------
-quarter | filed_date | action | value_k | prev_qty | qty | delta | qty_source
-2025-03-31 | 2025-12-03 | SELL | 481424 | 544373 | 481424 | -62949 | value_k
+quarter | filed_date | action | prev_qty | qty | delta
+2025-03-31 | 2025-12-03 | SELL | 544373 | 481424 | -62949
 
 MANAGER: Swiss Life Asset Management Ltd
 ----------------------------------------
-quarter | filed_date | action | value_k | prev_qty | qty | delta | qty_source
-2022-12-31 | 2025-12-09 | SELL | 3546870 | 13498249 | 3546870 | -9951379 | value_k
-2023-03-31 | 2025-12-09 | BUY | 19281663 | 3546870 | 19281663 | 15734793 | value_k
-2023-06-30 | 2025-12-09 | SELL | 6613706 | 19281663 | 6613706 | -12667957 | value_k
-2023-09-30 | 2025-12-09 | BUY | 24406082 | 6613706 | 24406082 | 17792376 | value_k
-2023-12-31 | 2025-12-09 | SELL | 5964269 | 24406082 | 5964269 | -18441813 | value_k
-2024-03-31 | 2025-12-09 | SELL | 1865560 | 5964269 | 1865560 | -4098709 | value_k
-2024-06-30 | 2025-12-09 | BUY | 7376692 | 1865560 | 7376692 | 5511132 | value_k
-2024-09-30 | 2025-12-09 | BUY | 8627489 | 7376692 | 8627489 | 1250797 | value_k
-2024-12-31 | 2025-12-09 | SELL | 8447869 | 8627489 | 8447869 | -179620 | value_k
-2025-03-31 | 2025-12-02 | BUY | 60028402 | 8447869 | 60028402 | 51580533 | value_k
-2025-06-30 | 2025-12-02 | SELL | 10392358 | 60028402 | 10392358 | -49636044 | value_k
-2025-09-30 | 2025-12-02 | BUY | 128477182 | 10392358 | 128477182 | 118084824 | value_k
+quarter | filed_date | action | prev_qty | qty | delta
+2022-12-31 | 2025-12-09 | SELL | 13498249 | 3546870 | -9951379
+2023-03-31 | 2025-12-09 | BUY | 3546870 | 19281663 | 15734793
+2023-06-30 | 2025-12-09 | SELL | 19281663 | 6613706 | -12667957
+2023-09-30 | 2025-12-09 | BUY | 6613706 | 24406082 | 17792376
+2023-12-31 | 2025-12-09 | SELL | 24406082 | 5964269 | -18441813
+2024-03-31 | 2025-12-09 | SELL | 5964269 | 1865560 | -4098709
+2024-06-30 | 2025-12-09 | BUY | 1865560 | 7376692 | 5511132
+2024-09-30 | 2025-12-09 | BUY | 7376692 | 8627489 | 1250797
+2024-12-31 | 2025-12-09 | SELL | 8627489 | 8447869 | -179620
+2025-03-31 | 2025-12-02 | BUY | 8447869 | 60028402 | 51580533
+2025-06-30 | 2025-12-02 | SELL | 60028402 | 10392358 | -49636044
+2025-09-30 | 2025-12-02 | BUY | 10392358 | 128477182 | 118084824
 
 MANAGER: TCFG WEALTH MANAGEMENT, LLC
 ------------------------------------
-quarter | filed_date | action | value_k | prev_qty | qty | delta | qty_source
-2025-09-30 | 2025-11-18 | HOLD | 984902 | 984902 | 984902 | 0 | value_k
-
-MANAGER: TUDOR INVESTMENT CORP ET AL
-------------------------------------
-quarter | filed_date | action | value_k | prev_qty | qty | delta | qty_source
-2025-09-30 | 2025-11-14 | HOLD | 258290816 | 258290816 | 258290816 | 0 | value_k
+quarter | filed_date | action | prev_qty | qty | delta
+2025-09-30 | 2025-11-18 | HOLD | 984902 | 984902 | 0
 
 MANAGER: Triumph Capital Management
 -----------------------------------
-quarter | filed_date | action | value_k | prev_qty | qty | delta | qty_source
-2025-09-30 | 2025-12-23 | BUY | 1323968 | 436300 | 1323968 | 887668 | value_k
-2025-09-30 | 2025-11-14 | HOLD | 1323968 | 1323968 | 1323968 | 0 | value_k
-
-MANAGER: Value Aligned Research Advisors, LLC
----------------------------------------------
-quarter | filed_date | action | value_k | prev_qty | qty | delta | qty_source
-2025-09-30 | 2025-11-14 | HOLD | 98434000 | 98434000 | 98434000 | 0 | value_k
+quarter | filed_date | action | prev_qty | qty | delta
+2025-09-30 | 2025-12-23 | BUY | 436300 | 1323968 | 887668
 

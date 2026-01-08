@@ -1,40 +1,40 @@
-=== FDS (per-manager position changes; qty_source=shares or value_k) ===
+=== FDS (per-manager position changes; qty_proxy=value_k) ===
 
 MANAGER: DANSKE BANK A/S
 ------------------------
-quarter | filed_date | action | value_k | prev_qty | qty | delta | qty_source
-2025-06-30 | 2025-12-18 | BUY | 999671 | 591941 | 999671 | 407730 | value_k
-2025-09-30 | 2025-11-19 | SELL | 630851 | 999671 | 630851 | -368820 | value_k
+quarter | filed_date | action | prev_qty | qty | delta
+2025-06-30 | 2025-12-18 | BUY | 591941 | 999671 | 407730
+2025-09-30 | 2025-11-19 | SELL | 999671 | 630851 | -368820
 
 MANAGER: REGIONS FINANCIAL CORP
 -------------------------------
-quarter | filed_date | action | value_k | prev_qty | qty | delta | qty_source
-2025-09-30 | 2025-11-19 | HOLD | 3062578 | 3062578 | 3062578 | 0 | value_k
+quarter | filed_date | action | prev_qty | qty | delta
+2025-09-30 | 2025-11-19 | HOLD | 3062578 | 3062578 | 0
 
 MANAGER: ROYAL BANK OF CANADA
 -----------------------------
-quarter | filed_date | action | value_k | prev_qty | qty | delta | qty_source
-2025-06-30 | 2025-11-21 | SELL | 6319000 | 12043000 | 6319000 | -5724000 | value_k
-2025-09-30 | 2025-11-14 | SELL | 4015000 | 6319000 | 4015000 | -2304000 | value_k
+quarter | filed_date | action | prev_qty | qty | delta
+2025-06-30 | 2025-11-21 | SELL | 12043000 | 6319000 | -5724000
+2025-09-30 | 2025-11-14 | SELL | 6319000 | 4015000 | -2304000
 
 MANAGER: Swiss Life Asset Management Ltd
 ----------------------------------------
-quarter | filed_date | action | value_k | prev_qty | qty | delta | qty_source
-2022-12-31 | 2025-12-09 | BUY | 500882 | 419037 | 500882 | 81845 | value_k
-2023-03-31 | 2025-12-09 | BUY | 739200 | 500882 | 739200 | 238318 | value_k
-2023-06-30 | 2025-12-09 | SELL | 387329 | 739200 | 387329 | -351871 | value_k
-2023-09-30 | 2025-12-09 | BUY | 2482894 | 387329 | 2482894 | 2095565 | value_k
-2023-12-31 | 2025-12-09 | SELL | 376528 | 2482894 | 376528 | -2106366 | value_k
-2024-03-31 | 2025-12-09 | BUY | 397137 | 376528 | 397137 | 20609 | value_k
-2024-06-30 | 2025-12-09 | BUY | 455157 | 397137 | 455157 | 58020 | value_k
-2024-09-30 | 2025-12-09 | BUY | 660557 | 455157 | 660557 | 205400 | value_k
-2024-12-31 | 2025-12-09 | BUY | 1683334 | 660557 | 1683334 | 1022777 | value_k
-2025-03-31 | 2025-12-02 | BUY | 1851294 | 1683334 | 1851294 | 167960 | value_k
-2025-06-30 | 2025-12-02 | BUY | 3311661 | 1851294 | 3311661 | 1460367 | value_k
-2025-09-30 | 2025-12-02 | SELL | 2671233 | 3311661 | 2671233 | -640428 | value_k
+quarter | filed_date | action | prev_qty | qty | delta
+2022-12-31 | 2025-12-09 | BUY | 419037 | 500882 | 81845
+2023-03-31 | 2025-12-09 | BUY | 500882 | 739200 | 238318
+2023-06-30 | 2025-12-09 | SELL | 739200 | 387329 | -351871
+2023-09-30 | 2025-12-09 | BUY | 387329 | 2482894 | 2095565
+2023-12-31 | 2025-12-09 | SELL | 2482894 | 376528 | -2106366
+2024-03-31 | 2025-12-09 | BUY | 376528 | 397137 | 20609
+2024-06-30 | 2025-12-09 | BUY | 397137 | 455157 | 58020
+2024-09-30 | 2025-12-09 | BUY | 455157 | 660557 | 205400
+2024-12-31 | 2025-12-09 | BUY | 660557 | 1683334 | 1022777
+2025-03-31 | 2025-12-02 | BUY | 1683334 | 1851294 | 167960
+2025-06-30 | 2025-12-02 | BUY | 1851294 | 3311661 | 1460367
+2025-09-30 | 2025-12-02 | SELL | 3311661 | 2671233 | -640428
 
 MANAGER: TUDOR INVESTMENT CORP ET AL
 ------------------------------------
-quarter | filed_date | action | value_k | prev_qty | qty | delta | qty_source
-2025-09-30 | 2025-11-14 | HOLD | 17973237 | 17973237 | 17973237 | 0 | value_k
+quarter | filed_date | action | prev_qty | qty | delta
+2025-09-30 | 2025-11-14 | HOLD | 17973237 | 17973237 | 0
 

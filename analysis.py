@@ -7,40 +7,28 @@ N_DELTAS = 12
 
 def infer_trades_per_manager(n_deltas: int = N_DELTAS):
     """
-    - Cap to most recent (n_deltas + 1) quarters per manager+ticker
-    - Drop first (baseline) by requiring prev_qty_proxy IS NOT NULL
+    Uses value_k only (shares removed).
+    Option A:
+      - Keep most recent (n_deltas + 1) quarters per manager+ticker
+      - Drop first baseline to get n_deltas deltas.
     """
     keep_obs = n_deltas + 1
     conn = sqlite3.connect(DB_PATH)
 
     query = f"""
-    WITH base AS (
+    WITH ranked AS (
         SELECT
             manager,
             ticker,
             quarter,
-            SUBSTR(filed_at, 1, 10) AS filed_date,
-            shares,
-            value_k,
-            CASE
-                WHEN shares IS NOT NULL THEN CAST(shares AS REAL)
-                ELSE CAST(value_k AS REAL)
-            END AS qty_proxy,
-            CASE
-                WHEN shares IS NOT NULL THEN 'shares'
-                ELSE 'value_k'
-            END AS qty_source
-        FROM holdings
-        WHERE value_k IS NOT NULL
-    ),
-    ranked AS (
-        SELECT
-            *,
+            filed_date,
+            value_k AS qty_proxy,
             ROW_NUMBER() OVER (
                 PARTITION BY manager, ticker
                 ORDER BY date(quarter) DESC
             ) AS rn
-        FROM base
+        FROM holdings
+        WHERE value_k IS NOT NULL
     ),
     capped AS (
         SELECT * FROM ranked WHERE rn <= {keep_obs}
@@ -59,7 +47,6 @@ def infer_trades_per_manager(n_deltas: int = N_DELTAS):
         ticker,
         quarter,
         filed_date,
-        value_k,
         prev_qty_proxy,
         qty_proxy,
         (qty_proxy - prev_qty_proxy) AS delta_qty_proxy,
@@ -67,8 +54,7 @@ def infer_trades_per_manager(n_deltas: int = N_DELTAS):
             WHEN (qty_proxy - prev_qty_proxy) > 0 THEN 'BUY'
             WHEN (qty_proxy - prev_qty_proxy) < 0 THEN 'SELL'
             ELSE 'HOLD'
-        END AS action,
-        qty_source
+        END AS action
     FROM ordered
     WHERE prev_qty_proxy IS NOT NULL
     ORDER BY ticker, manager, date(quarter)

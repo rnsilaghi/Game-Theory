@@ -13,26 +13,20 @@ def create_db():
     conn = get_connection()
     cur = conn.cursor()
 
-    # ---------- Holdings ----------
+    # ---------- Holdings (shares removed; filed_date stored clean) ----------
     cur.execute("""
     CREATE TABLE IF NOT EXISTS holdings (
         accession_no TEXT NOT NULL,
         manager      TEXT NOT NULL,
         quarter      TEXT NOT NULL,
         ticker       TEXT NOT NULL,
-        shares       INTEGER,
         value_k      REAL NOT NULL,
-        filed_at     TEXT
+        filed_date   TEXT,          -- YYYY-MM-DD (clean)
+        PRIMARY KEY (accession_no, manager, ticker)
     )
     """)
 
-    cur.execute("""
-    CREATE UNIQUE INDEX IF NOT EXISTS ux_holdings_unique
-    ON holdings(accession_no, manager, ticker)
-    """)
-
     # ---------- Backfill checkpoint ----------
-    # Stores the "oldest filedAt we've backfilled down to" per ticker
     cur.execute("""
     CREATE TABLE IF NOT EXISTS ingest_checkpoint (
         ticker TEXT PRIMARY KEY,
@@ -55,6 +49,9 @@ def create_db():
 
 
 def insert_holdings(rows):
+    """
+    rows: (accession_no, manager, quarter, ticker, value_k, filed_date)
+    """
     if not rows:
         return 0
 
@@ -64,8 +61,8 @@ def insert_holdings(rows):
 
     cur.executemany("""
         INSERT OR IGNORE INTO holdings
-        (accession_no, manager, quarter, ticker, shares, value_k, filed_at)
-        VALUES (?, ?, ?, ?, ?, ?, ?)
+        (accession_no, manager, quarter, ticker, value_k, filed_date)
+        VALUES (?, ?, ?, ?, ?, ?)
     """, rows)
 
     conn.commit()
@@ -98,6 +95,7 @@ def set_backfill_checkpoint(ticker: str, last_filed_at: str):
 def upsert_prices_eod(rows):
     """
     rows: (ticker, date, close)
+    Safe to rerun.
     """
     if not rows:
         return 0
