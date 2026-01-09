@@ -34,6 +34,7 @@ def run_stats(df: pd.DataFrame):
     model = sm.OLS(y, X).fit()
     results["regression"] = {
         "beta": model.params[1],
+        #Beta is how much next-quarter returns change, on average, when institutional exposure increases by $1k
         "t_stat": model.tvalues[1],
         "p_value": model.pvalues[1],
         "r_squared": model.rsquared,
